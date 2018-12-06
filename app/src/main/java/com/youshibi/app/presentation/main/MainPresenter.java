@@ -38,7 +38,7 @@ public class MainPresenter extends BaseRxPresenter<MainContract.View> implements
     @Override
     public void start() {
         super.start();
-        checkAppUpdate();
+       // checkAppUpdate();
     }
 
     private void checkAppUpdate() {

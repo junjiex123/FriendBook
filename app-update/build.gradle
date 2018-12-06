@@ -1,14 +1,12 @@
 apply plugin: 'com.android.library'
 
-def cfg = rootProject.ext.configuration // 项目配置
-def libs = rootProject.ext.libraries // 库
+
 android {
-    compileSdkVersion cfg.compileVersion
-    buildToolsVersion cfg.buildToolsVersion
+    compileSdkVersion 27
 
     defaultConfig {
-        minSdkVersion cfg.minSdk
-        targetSdkVersion cfg.targetSdk
+        minSdkVersion 18
+        targetSdkVersion 26
         versionCode 3
         versionName "1.0.3"
     }
@@ -27,5 +25,5 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-core-utils:' + libs.supportVersion
+    compile 'com.android.support:support-core-utils:26.0.2'
 }

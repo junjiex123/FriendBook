@@ -1,14 +1,11 @@
 apply plugin: 'com.android.library'
 
-def cfg = rootProject.ext.configuration // 项目配置
-def libs = rootProject.ext.libraries // 库
 android {
-    compileSdkVersion cfg.compileVersion
-    buildToolsVersion cfg.buildToolsVersion
+    compileSdkVersion 27
 
     defaultConfig {
-        minSdkVersion cfg.minSdk
-        targetSdkVersion cfg.targetSdk
+        minSdkVersion 18
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
@@ -18,6 +15,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:' + libs.supportVersion
-    compile 'com.android.support:recyclerview-v7:' + libs.supportVersion
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.android.support:recyclerview-v7:26.0.2'
 }

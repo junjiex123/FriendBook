@@ -1,53 +1,31 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
 
-def cfg = rootProject.ext.configuration // 项目配置
-def libs = rootProject.ext.libraries // 库
 
 android {
-    compileSdkVersion cfg.compileVersion
-    buildToolsVersion cfg.buildToolsVersion
+    compileSdkVersion 27
 
     defaultConfig {
-        applicationId cfg.package
-        minSdkVersion cfg.minSdk
-        targetSdkVersion cfg.targetSdk
-        versionCode cfg.version_code
-        versionName cfg.version_name
+        applicationId "com.youshu.douniu"
+        minSdkVersion 18
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.10"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true //SVG兼容库
     }
 
     signingConfigs {
         release {
-            storeFile file("FriendBook.jks")
-            storePassword "zchu@youshu\$888"
-            keyAlias "youshu"
-            keyPassword "Vary@laiyoushu\$8073"
         }
     }
 
 
     buildTypes {
         debug {
-            //打包的签名
-            // signingConfig signingConfigs.release
-            //是否混淆代码
-            minifyEnabled false
-            //去除未使用的资源文件
-            //shrinkResources true
 
         }
         release {
-            // signingConfig signingConfigs.release
-            minifyEnabled true
-            shrinkResources true
-            zipAlignEnabled true
-            debuggable false
-            //混淆文件的位置
-            //proguard-android.txt是默认的混淆声明，文件的目录在 <sdk目录>/tools/proguard/proguard-android.txt
-            //proguard-rules.pro 自定义的混淆文件，目录就在 app/proguard-rules.pro
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
         }
     }
@@ -59,7 +37,7 @@ android {
 }
 
 greendao {
-    schemaVersion cfg.greendaoSchemaVersion
+    schemaVersion 10
    // daoPackage cfg.greendaoDaoPackage
 }
 
@@ -72,17 +50,17 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     //support
-    compile 'com.android.support:support-v4:' + libs.supportVersion
-    compile 'com.android.support:appcompat-v7:' + libs.supportVersion
-    compile 'com.android.support:design:' + libs.supportVersion
-    compile 'com.android.support:cardview-v7:' + libs.supportVersion
-    compile 'com.android.support:recyclerview-v7:' + libs.supportVersion
+    compile 'com.android.support:support-v4:26.0.2'
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.android.support:design:26.0.2'
+    compile 'com.android.support:cardview-v7:26.0.2'
+    compile 'com.android.support:recyclerview-v7:26.0.2'
 
     //netWork
     compile 'com.squareup.okio:okio:1.13.0'
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
-    compile 'com.squareup.retrofit2:retrofit:' + libs.retrofit
-    compile 'com.squareup.retrofit2:adapter-rxjava:' + libs.retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
     //compile 'com.squareup.retrofit2:converter-gson:' + libs.retrofit
     //compile 'com.squareup.retrofit2:converter-scalars:' + libs.retrofit
     compile 'com.google.code.gson:gson:2.8.2'
@@ -96,9 +74,9 @@ dependencies {
     }
 
     //leakCanary
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:' + libs.leakcanary
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + libs.leakcanary
-    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + libs.leakcanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
 
     //log
     debugCompile 'com.zchu:zlog:1.0.1'
