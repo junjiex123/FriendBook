@@ -1,1 +1,1 @@
-include ':app', ':reader', ':label-selection', ':app-update'
+include ':app', ':reader', ':label-selection', ':app-update',':shadow6.0'

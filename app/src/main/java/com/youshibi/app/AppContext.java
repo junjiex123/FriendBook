@@ -4,11 +4,13 @@ import android.app.Application;
 import android.content.Context;
 import android.support.v7.app.AppCompatDelegate;
 
+import com.ego.shadow.Shadow;
 import com.squareup.leakcanary.LeakCanary;
 import com.umeng.analytics.MobclickAgent;
 import com.youshibi.app.data.db.DBRepository;
 import com.youshibi.app.pref.AppConfig;
 import com.youshibi.app.pref.C;
+import com.youshibi.app.presentation.main.MainActivity;
 import com.zchu.log.Logger;
 
 
@@ -46,7 +48,7 @@ public class AppContext extends Application {
         DBRepository.initDatabase(this);
         initUmeng(this);
         initTheme();
-
+        Shadow.init(this,"1810111919",MainActivity.class);
     }
 
     private void initUmeng(Context context) {

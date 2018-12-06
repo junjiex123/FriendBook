@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">斗牛小说</string>
+    <string name="app_name">斗牛</string>
 
     <string name="search">搜索</string>
     <string name="list_the_end">没有更多数据</string>
